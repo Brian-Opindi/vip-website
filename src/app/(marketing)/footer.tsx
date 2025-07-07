@@ -121,7 +121,7 @@ const Footer = () => {
                 </div>
 
                 {/* Second Row - Bottom Footer */}
-                <div className="bg-vanilla rounded-b-2xl px-8 py-2 -mx-8 -mb-10 mt-8">
+                <div className="bg-white rounded-b-2xl px-8 py-2 -mx-8 -mb-10 mt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                         {/* Left - Copyright */}
                         <p className="text-gray-700 text-xs font-urbanist">
