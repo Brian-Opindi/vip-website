@@ -40,7 +40,7 @@ const Hero = () => {
                                       >
                                         <ArrowUpRight className="text-white" size={20} />
                                       </span>
-                                    Join Early Access!
+                                    Get Early Access!
                                 </Button>
                                 <Button variant="vipoutline" className="p-6">
                                       <span
@@ -50,7 +50,7 @@ const Hero = () => {
                                       >
                                         <ArrowUpRight className="text-white" size={20} />
                                       </span>
-                                    Watch 30s Demo!
+                                    Join our community!
                                 </Button>
                             </div>
                         </div>

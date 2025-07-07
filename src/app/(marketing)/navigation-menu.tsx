@@ -2,8 +2,8 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { CircleIcon } from "lucide-react"
-
+import {CircleIcon, Moon, Sun} from "lucide-react"
+import { useTheme } from "next-themes"
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -14,6 +14,13 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const features: { title: string; href: string; description: string }[] = [
     {
@@ -82,6 +89,7 @@ const learn: { title: string; href: string; description: string }[] = [
 ]
 
 export function NavMenu() {
+    const { theme, setTheme } = useTheme()
     return (
         <div className="w-full flex items-center justify-between px-6 py-4">
             {/* Logo - Left Column */}
@@ -181,16 +189,26 @@ export function NavMenu() {
             <div className="flex items-center space-x-3">
                 <Link
                     href="/login"
-                    className="px-4 py-2 text-white font-medium hover:text-gray-300 transition-colors"
+                    className="text-sm px-4 py-2 text-white font-medium hover:text-gray-300 transition-colors font-urbanist"
                 >
                     Sign In
                 </Link>
                 <Link
                     href="/signup"
-                    className="px-6 py-2 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-colors"
+                    className="text-sm px-6 py-2 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-colors font-urbanist"
                 >
                     Get Started
                 </Link>
+                <Button
+                    variant="outline"
+                    className="rounded-full cursor-pointer"
+                    size="icon"
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                >
+                    <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                    <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                    <span className="sr-only">Toggle theme</span>
+                </Button>
             </div>
         </div>
     )
