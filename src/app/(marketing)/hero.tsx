@@ -3,7 +3,6 @@
 import React from 'react'
 import Image from "next/image";
 import {NavMenu} from "@/app/(marketing)/navigation-menu";
-import { Badge } from "@/components/ui/badge"
 import {Button} from "@/components/ui/button";
 import {ArrowUpRight} from "lucide-react";
 

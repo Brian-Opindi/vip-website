@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
+import { CircleIcon } from "lucide-react"
 
 import {
     NavigationMenu,
@@ -124,7 +124,7 @@ export function NavMenu() {
                                     {/* Left Side - VIP Background Item */}
                                     <div className="w-1/3">
                                         <NavigationMenuLink asChild>
-                                            <a
+                                            <Link
                                                 className="flex h-full w-full flex-col justify-end rounded-md p-6 no-underline outline-hidden select-none focus:shadow-md bg-cover bg-center bg-no-repeat relative overflow-hidden min-h-[200px]"
                                                 style={{ backgroundImage: 'url(/images/vip2.gif)' }}
                                                 href="/"
@@ -142,7 +142,7 @@ export function NavMenu() {
                                                         Personal safety at your fingertips. One tap emergency response.
                                                     </p>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </NavigationMenuLink>
                                     </div>
 

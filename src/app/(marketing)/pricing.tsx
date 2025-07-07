@@ -76,7 +76,7 @@ const Pricing = () => {
                     {/* Right Column - Paragraph and Button (2/3) */}
                     <div className="lg:col-span-2 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-20">
                         <p className="leading-relaxed font-urbanist flex-1">
-                            Whether you're staying safe on your own, protecting a child, or caring for a loved one — VIP has a plan for you.
+                            Whether you&apos;re staying safe on your own, protecting a child, or caring for a loved one — VIP has a plan for you.
                         </p>
                         <Button variant="vipoutline" className="p-6 border-coffee text-coffee font-urbanist">
                                       <span
