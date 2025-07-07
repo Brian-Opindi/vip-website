@@ -15,12 +15,6 @@ import {
 } from "@/components/ui/navigation-menu"
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 const features: { title: string; href: string; description: string }[] = [
     {
