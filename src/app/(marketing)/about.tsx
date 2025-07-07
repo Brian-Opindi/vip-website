@@ -19,7 +19,7 @@ const About = () => {
 
     const handleImageError = () => {
         setImageError(true)
-        console.error('Failed to load image: /images/vip.gif')
+        console.error('Failed to load image: /images/vip2.gif')
     }
 
     return (
@@ -54,7 +54,7 @@ const About = () => {
                                     />
                                 ) : (
                                     <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                                        <span className="text-white text-lg">Image not found: /images/vip.gif</span>
+                                        <span className="text-white text-lg">Image not found: /images/vip2.gif</span>
                                     </div>
                                 )}
 

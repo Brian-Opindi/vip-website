@@ -126,7 +126,7 @@ export function NavMenu() {
                                         <NavigationMenuLink asChild>
                                             <a
                                                 className="flex h-full w-full flex-col justify-end rounded-md p-6 no-underline outline-hidden select-none focus:shadow-md bg-cover bg-center bg-no-repeat relative overflow-hidden min-h-[200px]"
-                                                style={{ backgroundImage: 'url(/images/vip.gif)' }}
+                                                style={{ backgroundImage: 'url(/images/vip2.gif)' }}
                                                 href="/"
                                             >
                                                 {/* Dark Overlay */}
