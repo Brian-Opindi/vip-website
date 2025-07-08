@@ -170,6 +170,7 @@ const ResetPasswordPage = () => {
                 setIsLoading(false)
             }, 1500)
         } catch (error) {
+            console.error('Token validation error:', error)
             setIsValidToken(false)
             setIsLoading(false)
         }
@@ -198,7 +199,7 @@ const ResetPasswordPage = () => {
 
         // Validate password confirmation
         if (formData.password !== formData.confirmPassword) {
-            setErrors(prev => ({ ...prev, confirmPassword: "Passwords don't match" }))
+            setErrors(prev => ({ ...prev, confirmPassword: "Passwords don&apos;t match" }))
             return
         }
 
@@ -216,6 +217,7 @@ const ResetPasswordPage = () => {
                 }, 3000)
             }, 2000)
         } catch (error) {
+            console.error('Password reset error:', error)
             setErrors(prev => ({ ...prev, general: 'Failed to reset password. Please try again.' }))
             setIsSubmitting(false)
         }
@@ -418,7 +420,7 @@ const ResetPasswordPage = () => {
                         </h1>
 
                         <p className="text-left text-sm text-gray-600 font-urbanist mb-6 leading-relaxed">
-                            Enter your new password below. Make sure it's strong and secure.
+                            Enter your new password below. Make sure it&apos;s strong and secure.
                         </p>
 
                         {errors.general && (

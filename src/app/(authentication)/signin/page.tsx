@@ -125,6 +125,9 @@ const SigninPage = () => {
             // }
 
         } catch (error) {
+            // Log the error for debugging purposes
+            console.error('Signin error:', error)
+
             setErrors(prev => ({
                 ...prev,
                 general: 'Invalid email or password. Please try again.'
