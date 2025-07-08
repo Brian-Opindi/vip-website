@@ -1,26 +1,10 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-import { Cookie, Settings, X, ChevronLeft, Check, ChevronDown } from "lucide-react";
+import { Cookie, X, ChevronLeft, ChevronDown } from "lucide-react";
 
 // Types
 export interface CookiePreferences {
@@ -357,13 +341,15 @@ export function CookieConsentProvider({
                                     </button>
                                 ) : (
                                     <>
-                                        <img
+                                        <Image
                                             src={logoUrl}
                                             alt={`${companyName} logo`}
+                                            width={24}
+                                            height={24}
                                             className="w-6 h-6 object-contain"
-                                            onError={(e) => {
-                                                e.currentTarget.style.display = 'none';
-                                                e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                                            onError={() => {
+                                                // Fallback handled by Next.js Image component
+                                                console.warn("Logo failed to load, using fallback");
                                             }}
                                         />
                                         <Cookie className="w-6 h-6 hidden" />
@@ -394,7 +380,7 @@ export function CookieConsentProvider({
                                             isChecked={state.preferences[category.id]}
                                             onToggle={(checked) => updatePreferences({ [category.id]: checked })}
                                             isOpen={openItems[category.id] || false}
-                                            onOpenChange={(open) => toggleItemOpen(category.id)}
+                                            onOpenChange={() => toggleItemOpen(category.id)}
                                         />
                                     ))}
                                 </div>
@@ -402,7 +388,7 @@ export function CookieConsentProvider({
                                 // Default Content
                                 <p className="text-xs text-muted-foreground font-urbanist leading-relaxed">
                                     We use cookies to enhance your browsing experience, serve personalized content,
-                                    and analyze our traffic. By clicking "Accept", you consent to our use of cookies.
+                                    and analyze our traffic. By clicking &quot;Accept&quot;, you consent to our use of cookies.
                                 </p>
                             )}
                         </div>
