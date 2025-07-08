@@ -65,10 +65,10 @@ const Launch = () => {
                                                         <SelectContent>
                                                             <SelectGroup>
                                                                 <SelectLabel>Who are you protecting today?</SelectLabel>
-                                                                <SelectItem value="apple">Myself</SelectItem>
-                                                                <SelectItem value="apple">My child</SelectItem>
-                                                                <SelectItem value="banana">My parent</SelectItem>
-                                                                <SelectItem value="blueberry">My team</SelectItem>
+                                                                <SelectItem value="myself">Myself</SelectItem>
+                                                                <SelectItem value="my-child">My child</SelectItem>
+                                                                <SelectItem value="my-parent">My parent</SelectItem>
+                                                                <SelectItem value="my-team">My team</SelectItem>
                                                             </SelectGroup>
                                                         </SelectContent>
                                                     </Select>
