@@ -85,7 +85,6 @@ const AnimatedInput = ({
 const ResetPasswordPage = () => {
     const searchParams = useSearchParams()
     const router = useRouter()
-    const [token, setToken] = useState<string | null>(null)
     const [isValidToken, setIsValidToken] = useState<boolean | null>(null)
     const [isLoading, setIsLoading] = useState(true)
     const [showPassword, setShowPassword] = useState(false)
@@ -152,7 +151,6 @@ const ResetPasswordPage = () => {
     useEffect(() => {
         const tokenParam = searchParams.get('token')
         if (tokenParam) {
-            setToken(tokenParam)
             validateToken(tokenParam)
         } else {
             setIsValidToken(false)
@@ -307,13 +305,13 @@ const ResetPasswordPage = () => {
                             </Alert>
 
                             <VipButton className="w-full mb-4">
-                                <Link href="/authentication/forgot-password">
+                                <Link href="/forgot-password">
                                     Request New Reset Link
                                 </Link>
                             </VipButton>
 
                             <Link
-                                href="/authentication/signin"
+                                href="/signin"
                                 className="text-sm text-coffee hover:text-coffee/80 font-urbanist"
                             >
                                 Back to Login
@@ -376,7 +374,7 @@ const ResetPasswordPage = () => {
                             </Alert>
 
                             <VipButton className="w-full">
-                                <Link href="/authentication/signin">
+                                <Link href="/signin">
                                     Continue to Login
                                 </Link>
                             </VipButton>
