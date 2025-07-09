@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Urbanist, Jost } from "next/font/google";
+import { Poppins, Urbanist, Jost, Wix_Madefor_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -16,6 +16,11 @@ const urbanist = Urbanist({
 
 const jost = Jost({
     variable: "--font-jost",
+    subsets: ["latin"],
+});
+
+const wixMadeforDisplay = Wix_Madefor_Display({
+    variable: "--font-wix-madefor-display",
     subsets: ["latin"],
 });
 
@@ -67,7 +72,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
         <body
-            className={`${poppins.variable} ${urbanist.variable} ${jost.variable} antialiased`}
+            className={`${poppins.variable} ${urbanist.variable} ${jost.variable} ${wixMadeforDisplay.variable} antialiased`}
         >
             <ThemeProvider
                 attribute="class"
