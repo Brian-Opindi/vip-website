@@ -87,13 +87,13 @@ export default function TestimonialSlider() {
                             </div>
 
                             {/* Text Column */}
-                            <div className="bg-white flex-1 h-[400px] flex flex-col justify-between rounded-3xl shadow-slate-200 dark:shadow-black p-8 overflow-hidden">
+                            <div className="bg-white dark:bg-black flex-1 h-[400px] flex flex-col justify-between rounded-3xl shadow-slate-200 dark:shadow-black p-8 overflow-hidden">
                                 <p className="text-neutral-800 dark:text-white text-2xl font-urbanist leading-relaxed mb-6">
                                     “{t.text}”
                                 </p>
                                 <div className="flex flex-col gap-2">
                                     <div>
-                                        <p className="text-coffee font-bold font-urbanist text-base">{t.name}</p>
+                                        <p className="text-coffee dark:text-vanilla font-bold font-urbanist text-base">{t.name}</p>
                                         <p className="text-sm text-gray-400 font-urbanist">{t.role}</p>
                                     </div>
 
