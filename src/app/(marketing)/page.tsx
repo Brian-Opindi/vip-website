@@ -5,6 +5,7 @@ import Footer from "@/app/(marketing)/footer";
 import Launch from "@/app/(marketing)/launch";
 import Testimonials from "@/app/(marketing)/testimonials";
 import Features from "@/app/(marketing)/features";
+import Why from "@/app/(marketing)/why";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <About />
         <Features />
+        <Why />
         <Testimonials />
         <Launch />
         <Pricing />

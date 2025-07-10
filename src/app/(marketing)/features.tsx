@@ -49,12 +49,12 @@ const Features = () => {
         <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto h-full mb-20">
             <div className="text-center mb-16">
                 {/* Title */}
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-urbanist">
+                <h2 className="text-3xl dark:text-vanilla sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-wix-madefor-display">
                     Your Personal Safety Toolkit
                 </h2>
 
                 {/* Paragraph */}
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed font-urbanist">
+                <p className="text-md text-gray-600 dark:text-white max-w-3xl mx-auto leading-relaxed font-wix-madefor-display">
                     VIP is more than just an emergency app — it&apos;s a complete personal safety platform, designed for the moments you hope never happen, and the peace of mind you always deserve.
                 </p>
             </div>

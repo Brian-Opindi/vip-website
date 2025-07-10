@@ -130,7 +130,7 @@ const Footer = () => {
 
                         {/* Right - Language Dropdown */}
                         <div className="relative">
-                            <select className="bg-transparent border border-vanilla rounded-lg px-4 py-2 text-gray-700 font-jost focus:outline-none focus:ring-2 focus:ring-vanilla focus:border-transparent">
+                            <select className="bg-transparent border border-white rounded-lg px-4 py-2 text-gray-700 font-jost focus:outline-none focus:ring-2 focus:ring-vanilla focus:border-transparent">
                                 <option value="en">English</option>
                                 <option value="es">Español</option>
                                 <option value="fr">Français</option>
