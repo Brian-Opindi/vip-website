@@ -19,25 +19,25 @@ import { Button } from "@/components/ui/button"
 const features: { title: string; href: string; description: string }[] = [
     {
         title: "Emergency alerts",
-        href: "/why/vip-for-late-night-workers",
+        href: "/features/emergency-alerts",
         description:
             "Instantly notify your trusted contacts and emergency services with one tap when you need help most.",
     },
     {
         title: "Geofencing",
-        href: "/why/vip-for-students",
+        href: "/features/geofencing",
         description:
             "Set safe zones and get automatic alerts when you enter or leave designated areas for added peace of mind.",
     },
     {
         title: "Safety communities",
-        href: "/why/vip-for-travelers",
+        href: "/features/safety-communities",
         description:
             "Connect with verified local safety networks and community responders in your area for immediate assistance.",
     },
     {
         title: "Live tracking",
-        href: "/why/vip-for-families",
+        href: "/features/live-tracking",
         description:
             "Share your real-time location with trusted contacts so they always know you're safe and can find you quickly.",
     },

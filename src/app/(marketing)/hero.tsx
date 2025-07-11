@@ -31,29 +31,28 @@ const Hero = () => {
                                     Wherever you are, feel safe, connected, and in control. VIP alerts your trusted circle in seconds.
                                 </p>
                             </div>
-                            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                                <Button variant="vip" className="p-6 font-wix-madefor-display">
-                                      <span
-                                          className="
-                                          shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-8 h-8 -ml-4 mr-2"
-                                          aria-hidden="true"
-                                      >
-                                        <ArrowUpRight className="text-white" size={20} />
-                                      </span>
-                                    Get Early Access!
-                                </Button>
-                                <Button variant="vipoutline" className="p-6 font-wix-madefor-display">
-                                      <span
-                                          className="
-                                          shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-8 h-8 -ml-4 mr-2"
-                                          aria-hidden="true"
-                                      >
-                                        <ArrowUpRight className="text-white" size={20} />
-                                      </span>
+                            <div className="flex flex-row gap-2 sm:gap-4 mb-10">
+                                <Button variant="vip" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
+                                  <span
+                                      className="
+                                      shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2"
+                                      aria-hidden="true"
+                                  >
+                                    <ArrowUpRight className="text-white" size={16} />
+                                  </span>
+                                                            Get Early Access!
+                                                        </Button>
+                                                        <Button variant="vipoutline" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
+                                  <span
+                                      className="
+                                      shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2"
+                                      aria-hidden="true"
+                                  >
+                                    <ArrowUpRight className="text-white" size={16} />
+                                  </span>
                                     Join our community!
                                 </Button>
-                            </div>
-                        </div>
+                            </div>                        </div>
 
                         {/* Right Column */}
                         <div className="flex items-center justify-center">
