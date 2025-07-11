@@ -5,7 +5,7 @@ const Cta = () => {
         <section className="py-16 bg-black text-white">
             <div className="container mx-auto px-6 text-center">
                 <h2 className="text-3xl font-bold mb-6">
-                    Ready to Enhance Your Family's Safety?
+                    Ready to Enhance Your Family&apos;s Safety?
                 </h2>
                 <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
                     Join thousands of families who trust our geofencing technology to keep their loved ones safe. Start your free trial today.

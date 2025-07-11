@@ -2,8 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {CircleIcon, Moon, Sun} from "lucide-react"
-import { useTheme } from "next-themes"
+import {CircleIcon} from "lucide-react"
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -14,7 +13,6 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import Image from "next/image";
-import { Button } from "@/components/ui/button"
 
 const features: { title: string; href: string; description: string }[] = [
     {
@@ -83,7 +81,6 @@ const learn: { title: string; href: string; description: string }[] = [
 ]
 
 export function NavMenu() {
-    const { theme, setTheme } = useTheme()
     return (
         <div className="w-full flex items-center justify-between px-6 py-4">
             {/* Logo - Left Column */}

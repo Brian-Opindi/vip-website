@@ -16,7 +16,7 @@ const Why = () => {
                             <div>
                                 <h3 className="text-lg font-semibold mb-2">Family Peace of Mind</h3>
                                 <p className="text-gray-600">
-                                    Know your children arrived safely at school, activities, or friends' houses. Monitor elderly parents during daily routines.
+                                    Know your children arrived safely at school, activities, or friends&apos; houses. Monitor elderly parents during daily routines.
                                 </p>
                             </div>
                         </div>

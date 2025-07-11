@@ -11,7 +11,7 @@ const UseCauses = () => {
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h3 className="text-lg font-semibold mb-3 text-blue-900">Family Safety</h3>
                         <p className="text-gray-600 text-sm">
-                            Monitor children's safe arrival at school and activities. Get alerts if they venture into unsafe areas.
+                            Monitor children&apos;s safe arrival at school and activities. Get alerts if they venture into unsafe areas.
                         </p>
                     </div>
                     <div className="bg-white p-6 rounded-lg shadow-md">

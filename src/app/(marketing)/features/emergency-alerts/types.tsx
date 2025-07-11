@@ -23,7 +23,7 @@ const Types = () => {
                         </div>
                         <h3 className="text-xl font-semibold mb-3">Voice Activation</h3>
                         <p className="text-gray-600">
-                            Hands-free emergency activation using voice commands. Works even when you can't reach your device.
+                            Hands-free emergency activation using voice commands. Works even when you can&apos;t reach your device.
                         </p>
                     </div>
                     <div className="text-center p-6 bg-yellow-50 rounded-lg">

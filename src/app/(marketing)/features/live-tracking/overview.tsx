@@ -14,7 +14,7 @@ const Overview = () => {
                                 Our live tracking system provides real-time location updates with military-grade precision. Using advanced GPS, cellular, and Wi-Fi positioning, we ensure you always know where your family members are.
                             </p>
                             <p className="text-lg font-urbanist text-gray-700 mb-6">
-                                Whether it's monitoring children on their way to school, elderly parents during daily activities, or ensuring personal safety during travel, our live tracking keeps you connected and informed.
+                                Whether it&apos;s monitoring children on their way to school, elderly parents during daily activities, or ensuring personal safety during travel, our live tracking keeps you connected and informed.
                             </p>
                             <div className="flex items-center space-x-4">
                                 <div className="flex items-center">

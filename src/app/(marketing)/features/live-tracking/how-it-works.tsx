@@ -42,7 +42,7 @@ const HowItWorks = () => {
                             </div>
                             <h3 className="text-lg font-semibold mb-3">Stay Connected</h3>
                             <p className="text-gray-600 text-sm">
-                                Receive notifications, access history, and maintain constant awareness of your family's safety.
+                                Receive notifications, access history, and maintain constant awareness of your family&apos;s safety.
                             </p>
                         </div>
                     </div>
