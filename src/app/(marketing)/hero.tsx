@@ -5,6 +5,7 @@ import Image from "next/image";
 import {NavMenu} from "@/app/(marketing)/navigation-menu";
 import {Button} from "@/components/ui/button";
 import {ArrowUpRight} from "lucide-react";
+import Link from "next/link";
 
 const Hero = () => {
     return (
@@ -33,24 +34,24 @@ const Hero = () => {
                             </div>
                             <div className="flex flex-row gap-2 sm:gap-4 mb-10">
                                 <Button variant="vip" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
-                                  <span
-                                      className="
-                                      shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2"
-                                      aria-hidden="true"
-                                  >
-                                    <ArrowUpRight className="text-white" size={16} />
-                                  </span>
-                                                            Get Early Access!
-                                                        </Button>
-                                                        <Button variant="vipoutline" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
-                                  <span
-                                      className="
-                                      shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2"
-                                      aria-hidden="true"
-                                  >
-                                    <ArrowUpRight className="text-white" size={16} />
-                                  </span>
+                                    <span className="shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2" aria-hidden="true">
+                                        <ArrowUpRight className="text-white" size={16} />
+                                    </span>
+                                    Get Early Access!
+                                </Button>
+                                <Button variant="vipoutline" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
+                                    <span className="shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2" aria-hidden="true">
+                                        <ArrowUpRight className="text-white" size={16} />
+                                    </span>
                                     Join our community!
+                                </Button>
+                                <Button asChild variant="vipoutline" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
+                                    <Link href="/blog">
+                                        <span className="shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2" aria-hidden="true">
+                                            <ArrowUpRight className="text-white" size={16} />
+                                        </span>
+                                        Read the Blog
+                                    </Link>
                                 </Button>
                             </div>                        </div>
 

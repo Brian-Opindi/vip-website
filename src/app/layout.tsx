@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Urbanist, Jost, Wix_Madefor_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
+import Cursor from "@/components/cursor"
 
 const poppins = Poppins({
     variable: "--font-poppins",
@@ -74,14 +75,15 @@ export default function RootLayout({
         <body
             className={`${poppins.variable} ${urbanist.variable} ${jost.variable} ${wixMadeforDisplay.variable} antialiased`}
         >
-            <ThemeProvider
-                attribute="class"
-                defaultTheme="light"
-                enableSystem
-                disableTransitionOnChange
-            >
-                    {children}
-            </ThemeProvider>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+        >
+            <Cursor />
+            {children}
+        </ThemeProvider>
         </body>
         </html>
     );
