@@ -3,8 +3,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import {NavMenu} from "@/app/(marketing)/navigation-menu";
 import Footer from '../(marketing)/footer';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const File = () => {
+    const router = useRouter();
     const [openSections, setOpenSections] = useState({
         location: false,
         driving: false,
@@ -98,18 +101,18 @@ const File = () => {
            <div className="absolute left-0 right-0 z-10 rounded-md bg-black mx-auto max-w-6xl flex justify-center">
                           <NavMenu />
                       </div>
-        <div className="min-h-screen bg-vanilla">
+        <div className="min-h-screen" style={{ backgroundColor: '#F5F1E8' }}>
            
 
  
 
             {/* Main Content */}
-            <main className="bg-stone-100 min-h-screen">
+            <main style={{ backgroundColor: '#F5F1E8' }} className="min-h-screen">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <div className="text-center mt-24">
                         {/* Main Heading */}
                         <h1 className="text-6xl md:text-8xl font-bold mb-8">
-                            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-purple-700 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-amber-800 via-yellow-900 to-amber-900 bg-clip-text text-transparent">
                                 WHY VIP
                             </span>
                         </h1>
@@ -120,7 +123,10 @@ const File = () => {
                         </h2>
 
                         {/* CTA Button */}
-                        <button className="bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-purple-700 transition-colors">
+                        <button 
+                            onClick={() => router.push('/pricing')}
+                            className="bg-amber-800 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-amber-900 transition-colors"
+                        >
                             Get started
                         </button>
                     </div>
@@ -128,7 +134,8 @@ const File = () => {
                     {/* Safety Features Section */}
                     <div 
                         ref={sectionRef}
-                        className={`mt-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center bg-stone-200 bg-opacity-30 p-12 rounded-3xl transition-all duration-1000 ease-out ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`} 
+                        className={`mt-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center p-12 rounded-3xl transition-all duration-1000 ease-out ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
+                        style={{ backgroundColor: '#F0EBE0' }}
                     >
                         {/* Left Side - Features List */}
                         <div className="space-y-8">
@@ -148,7 +155,7 @@ const File = () => {
                                                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                                             </svg>
                                         </div>
-                                        <span className="text-lg font-semibold text-gray-800">Location Safety</span>
+                                        <span className="text-lg font-semibold text-gray-800">Community Safety</span>
                                     </div>
                                     <svg 
                                         className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${openSections.location ? 'transform rotate-180' : ''}`} 
@@ -179,7 +186,7 @@ const File = () => {
                                                 <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z" />
                                             </svg>
                                         </div>
-                                        <span className="text-lg font-semibold text-gray-800">Driving Safety</span>
+                                        <span className="text-lg font-semibold text-gray-800">Old fork security</span>
                                     </div>
                                     <svg 
                                         className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${openSections.driving ? 'transform rotate-180' : ''}`} 
@@ -209,7 +216,7 @@ const File = () => {
                                                 <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                             </svg>
                                         </div>
-                                        <span className="text-lg font-semibold text-gray-800">Digital Safety</span>
+                                        <span className="text-lg font-semibold text-gray-800">SOS alert</span>
                                     </div>
                                     <svg 
                                         className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${openSections.digital ? 'transform rotate-180' : ''}`} 
@@ -288,6 +295,100 @@ const File = () => {
                         </div>
                     </div>
 
+                    {/* Safety and Independence Section */}
+                    <div className="mt-32 space-y-32">
+                        {/* Section Header */}
+                        <div className="text-center mb-20">
+                            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                                We believe safety and independence can go hand-in-hand.
+                            </h2>
+                        </div>
+
+                        {/* Independence for Families - Image Left */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div className="relative">
+                                <Image 
+                                    src="/images/user 1.jpg" 
+                                    alt="Family enjoying independence" 
+                                    width={500}
+                                    height={384}
+                                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                                />
+                            </div>
+                            <div className="space-y-6">
+                                <h3 className="text-3xl font-bold text-gray-800">Independence for families</h3>
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Because we offer such a comprehensive range of safety features, families can feel free 
+                                    of daily worry. Free to explore, adventure, try new things, and trust themselves and one 
+                                    another.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Peace of Mind - Image Right */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div className="space-y-6 lg:order-1">
+                                <h3 className="text-3xl font-bold text-gray-800">Peace of mind for parents</h3>
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    With real-time location sharing, driving safety monitoring, and emergency alerts, 
+                                    parents can give their children the freedom they crave while staying connected and 
+                                    informed about their safety.
+                                </p>
+                            </div>
+                            <div className="relative lg:order-2">
+                                <Image 
+                                    src="/images/user 2.jpg" 
+                                    alt="Parent and child connection" 
+                                    width={500}
+                                    height={384}
+                                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Community Safety - Image Left */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div className="relative">
+                                <Image 
+                                    src="/images/user 3.jpg" 
+                                    alt="Community safety network" 
+                                    width={500}
+                                    height={384}
+                                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                                />
+                            </div>
+                            <div className="space-y-6">
+                                <h3 className="text-3xl font-bold text-gray-800">Building safer communities</h3>
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    VIP creates networks of safety that extend beyond individual families. When communities 
+                                    are connected and informed, everyone benefits from increased security and mutual support 
+                                    in times of need.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Emergency Response - Image Right */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div className="space-y-6 lg:order-1">
+                                <h3 className="text-3xl font-bold text-gray-800">Instant emergency response</h3>
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Our 24/7 emergency assistance service ensures that help is always just one tap away. 
+                                    Whether it&apos;s a medical emergency, car trouble, or safety concern, VIP connects you to 
+                                    professional assistance instantly.
+                                </p>
+                            </div>
+                            <div className="relative lg:order-2">
+                                <Image 
+                                    src="/images/user 4.jpg" 
+                                    alt="Emergency response" 
+                                    width={500}
+                                    height={384}
+                                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Timeline Section */}
                     <div 
                         ref={timelineRef}
@@ -297,7 +398,7 @@ const File = () => {
                         <div className="text-center mb-16">
                             <p className="text-gray-600 text-lg mb-4">Our story</p>
                             <h2 className="text-5xl md:text-6xl font-bold text-gray-800">
-                                How we got here.
+                                Our Jouney
                             </h2>
                         </div>
 
@@ -328,7 +429,11 @@ const File = () => {
                                     style={{ transform: `translateX(-${currentSlide * (320 + 32)}px)` }}
                                 >
                                     {timelineData.map((item, index) => (
-                                        <div key={index} className="flex-shrink-0 w-80 bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                                        <div 
+                                            key={index} 
+                                            className="flex-shrink-0 w-80 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+                                            style={{ backgroundColor: '#F8F8F8' }}
+                                        >
                                             <h3 className="text-3xl font-bold text-gray-800 mb-4">{item.year}</h3>
                                             <p className="text-gray-600 text-lg leading-relaxed">
                                                 {item.text}
@@ -349,6 +454,63 @@ const File = () => {
                                         }`}
                                     />
                                 ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Call to Action Section */}
+                    <div className="mt-32 text-center">
+                        <div className="max-w-4xl mx-auto space-y-8">
+                            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+                                Ready to experience safety without limits?
+                            </h2>
+                            <p className="text-xl text-gray-600 leading-relaxed">
+                                Join millions of families worldwide who trust VIP to keep their loved ones safe while living life to the fullest. 
+                                Start your journey with comprehensive safety features designed for modern families.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+                                <button 
+                                    onClick={() => router.push('/pricing')}
+                                    className="bg-amber-800 text-white px-12 py-4 rounded-lg text-lg font-medium hover:bg-amber-900 transition-colors shadow-lg hover:shadow-xl"
+                                >
+                                    Get Started Today
+                                </button>
+                                <button 
+                                    onClick={() => router.push('/features')}
+                                    className="border-2 border-amber-800 text-amber-800 px-12 py-4 rounded-lg text-lg font-medium hover:bg-amber-800 hover:text-white transition-colors"
+                                >
+                                    Explore Features
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Stats Section */}
+                    <div className="mt-32">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <div 
+                                className="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                                style={{ backgroundColor: '#F0EBE0' }}
+                            >
+                                <h3 className="text-4xl font-bold text-amber-800 mb-4">10M+</h3>
+                                <p className="text-lg text-gray-700 font-semibold">Families Protected</p>
+                                <p className="text-gray-600 mt-2">Trusted by families worldwide</p>
+                            </div>
+                            <div 
+                                className="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                                style={{ backgroundColor: '#F0EBE0' }}
+                            >
+                                <h3 className="text-4xl font-bold text-amber-800 mb-4">195</h3>
+                                <p className="text-lg text-gray-700 font-semibold">Countries Served</p>
+                                <p className="text-gray-600 mt-2">Global safety network</p>
+                            </div>
+                            <div 
+                                className="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                                style={{ backgroundColor: '#F0EBE0' }}
+                            >
+                                <h3 className="text-4xl font-bold text-amber-800 mb-4">24/7</h3>
+                                <p className="text-lg text-gray-700 font-semibold">Emergency Support</p>
+                                <p className="text-gray-600 mt-2">Always here when you need us</p>
                             </div>
                         </div>
                     </div>
