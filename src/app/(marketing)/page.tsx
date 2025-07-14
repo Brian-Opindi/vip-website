@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Hero from "@/app/(marketing)/hero";
 import About from "@/app/(marketing)/about";
 import Pricing from "@/app/(marketing)/pricing";
