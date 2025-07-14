@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail } from 'lucide-react'
 import Image from "next/image";
+import {FloatingDockDemo} from "@/app/(marketing)/floating-dock";
 
 const Footer = () => {
     return (
@@ -139,6 +140,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <FloatingDockDemo />
             </div>
         </section>
     )

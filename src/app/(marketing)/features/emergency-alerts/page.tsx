@@ -5,7 +5,7 @@ import Footer from "@/app/(marketing)/footer";
 
 const Page = () => {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen">
             <Hero />
             <Features />
             <Footer />

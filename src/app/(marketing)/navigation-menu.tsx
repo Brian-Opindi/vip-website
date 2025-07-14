@@ -2,7 +2,8 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {CircleIcon} from "lucide-react"
+import {CircleIcon, Moon, Sun} from "lucide-react"
+import { useTheme } from "next-themes"
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -13,6 +14,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import Image from "next/image";
+import { Button } from "@/components/ui/button"
 
 const features: { title: string; href: string; description: string }[] = [
     {
@@ -81,6 +83,7 @@ const learn: { title: string; href: string; description: string }[] = [
 ]
 
 export function NavMenu() {
+    const { theme, setTheme } = useTheme()
     return (
         <div className="w-full flex items-center justify-between px-6 py-4">
             {/* Logo - Left Column */}
@@ -190,7 +193,7 @@ export function NavMenu() {
                 >
                     Get Started
                 </Link>
-                {/*<Button
+                <Button
                     variant="outline"
                     className="rounded-full cursor-pointer"
                     size="icon"
@@ -199,7 +202,7 @@ export function NavMenu() {
                     <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                     <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
                     <span className="sr-only">Toggle theme</span>
-                </Button>*/}
+                </Button>
             </div>
         </div>
     )

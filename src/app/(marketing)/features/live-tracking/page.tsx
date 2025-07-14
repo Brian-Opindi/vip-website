@@ -4,7 +4,7 @@ import Features from "@/app/(marketing)/features/live-tracking/features";
 
 const Page = () => {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen">
             <Hero />
             <Features />
         </div>

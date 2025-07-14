@@ -4,84 +4,65 @@ const Features = () => {
     const features = [
         {
             id: 1,
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-            ),
+            icon: "📢",
             title: "One-Tap SOS",
-            description: "Trigger alerts silently and instantly."
+            description: "Trigger alerts silently and instantly.",
+            bgColor: "bg-vanilla",
+            iconColor: "text-coffee",
+            hoverBgColor: "group-hover:bg-coffee"
         },
         {
             id: 2,
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-            ),
+            icon: "👥",
             title: "Geofencing",
-            description: "Get notified when loved ones enter/leave safe zones."
+            description: "Get notified when loved ones enter/leave safe zones.",
+            bgColor: "bg-teal-100",
+            iconColor: "text-teal-600",
+            hoverBgColor: "group-hover:bg-teal-600"
         },
         {
             id: 3,
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            ),
+            icon: "🗺️",
             title: "Check-in Timers",
-            description: "Time your commute, walk, or solo outings."
+            description: "Time your commute, walk, or solo outings.",
+            bgColor: "bg-green-100",
+            iconColor: "text-green-600",
+            hoverBgColor: "group-hover:bg-green-600"
         },
         {
             id: 4,
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-            ),
+            icon: "💬",
             title: "Trusted Circles",
-            description: "Choose who gets notified — friends, parents, partners."
+            description: "Choose who gets notified — friends, parents, partners.",
+            bgColor: "bg-blue-100",
+            iconColor: "text-blue-600",
+            hoverBgColor: "group-hover:bg-blue-600"
         },
     ]
 
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto h-full mb-20">
-            <div className="text-center mb-16">
-                {/* Title */}
-                <h2 className="text-3xl dark:text-vanilla sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-wix-madefor-display">
-                    Your Personal Safety Toolkit
+        <section className="py-16 h-full">
+            <div className="container mx-auto px-6">
+                <h2 className="text-5xl font-urbanist text-center mb-12 text-coffee">
+                    Community Safety Features
                 </h2>
-
-                {/* Paragraph */}
-                <p className="text-md text-gray-600 dark:text-white max-w-3xl mx-auto leading-relaxed font-wix-madefor-display">
-                    VIP is more than just an emergency app — it&apos;s a complete personal safety platform, designed for the moments you hope never happen, and the peace of mind you always deserve.
-                </p>
-            </div>
-
-            {/* Features Grid - 4 top, 3 bottom */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {features.map((feature) => (
-                    <div
-                        key={feature.id}
-                        className="group cursor-pointer p-8 rounded-2xl border-0 hover:bg-vanilla/20 border-gray-200 hover:border-coffee hover:shadow-lg hover:transform hover:-translate-y-2 transition-all duration-500 bg-white hover:border-1"
-                    >
-                        {/* Icon */}
-                        <div className="w-16 h-16 bg-coffee/10 rounded-xl flex items-center justify-center text-coffee mb-6 group-hover:bg-coffee group-hover:text-vanilla transition-colors duration-300">
-                            {feature.icon}
+                <div className="grid md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                    {features.map((feature) => (
+                        <div key={feature.id} className="text-center p-2 relative group">
+                            <div className={`w-16 h-16 ${feature.bgColor} ${feature.hoverBgColor} rounded-full mx-auto mb-4 flex items-center justify-center relative z-10 transition-all duration-500 ease-in-out group-hover:shadow-xl group-hover:shadow-black/20`}>
+                                <span className={`${feature.iconColor} group-hover:text-white text-2xl transition-all duration-500 ease-in-out`}>{feature.icon}</span>
+                            </div>
+                            <div className="hover:bg-white bg-white rounded-2xl p-10 pt-10 -mt-12 transition-all duration-1000 ease-in-out hover:shadow-3xl hover:scale-105">
+                                <h3 className="text-xl mt-5 font-semibold font-urbanist text-coffee mb-3 transition-all duration-300 ease-in-out hover:text-opacity-80">
+                                    {feature.title}
+                                </h3>
+                                <p className="text-gray-600 text-md font-urbanist transition-all duration-300 ease-in-out hover:text-gray-800">
+                                    {feature.description}
+                                </p>
+                            </div>
                         </div>
-
-                        {/* Title */}
-                        <h3 className="text-xl font-semibold text-coffee mb-3 font-urbanist">
-                            {feature.title}
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-gray-600 text-md leading-relaxed font-urbanist">
-                            {feature.description}
-                        </p>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
     )
