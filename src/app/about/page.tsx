@@ -295,6 +295,133 @@ const File = () => {
                         </div>
                     </div>
 
+                    {/* Company Mission, Vision & Values Section */}
+                    <div className="mt-32">
+                        <div className="text-center mb-20">
+                            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                                About VIP
+                            </h2>
+                            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                                Founded on the belief that safety should never limit freedom, VIP has been empowering families to live boldly while staying connected.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                            {/* Mission Card */}
+                            <div 
+                                className="p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                                style={{ backgroundColor: '#F0EBE0' }}
+                            >
+                                <div className="w-16 h-16 bg-amber-800 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414-1.414L9 5.586 7.707 4.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L10 4.586z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Our Mission</h3>
+                                <p className="text-gray-600 text-center leading-relaxed">
+                                    To create a world where families can live fully and freely, knowing they&apos;re always connected to the people who matter most. We believe safety should empower, not restrict.
+                                </p>
+                            </div>
+
+                            {/* Vision Card */}
+                            <div 
+                                className="p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                                style={{ backgroundColor: '#F0EBE0' }}
+                            >
+                                <div className="w-16 h-16 bg-amber-800 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                        <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Our Vision</h3>
+                                <p className="text-gray-600 text-center leading-relaxed">
+                                    To be the global leader in family safety technology, building communities where independence and security coexist seamlessly in every corner of the world.
+                                </p>
+                            </div>
+
+                            {/* Values Card */}
+                            <div 
+                                className="p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                                style={{ backgroundColor: '#F0EBE0' }}
+                            >
+                                <div className="w-16 h-16 bg-amber-800 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Our Values</h3>
+                                <p className="text-gray-600 text-center leading-relaxed">
+                                    Trust, innovation, and family connection guide everything we do. We&apos;re committed to protecting what matters most while respecting privacy and promoting freedom.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Company Story Section */}
+                        <div 
+                            className="p-12 rounded-3xl shadow-lg"
+                            style={{ backgroundColor: '#F8F8F8' }}
+                        >
+                            <div className="max-w-4xl mx-auto text-center">
+                                <h3 className="text-3xl font-bold text-gray-800 mb-8">Why We Started VIP</h3>
+                                <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                                    <p>
+                                        VIP was born from a simple yet powerful realization: in an increasingly connected world, families were somehow becoming more disconnected from each other&apos;s daily lives and safety.
+                                    </p>
+                                    <p>
+                                        After Hurricane Katrina in 2005, our founders witnessed firsthand how traditional communication methods failed when families needed them most. They envisioned a solution that would keep families connected not just during emergencies, but in their everyday adventures.
+                                    </p>
+                                    <p>
+                                        Today, VIP serves over 10 million families across 195 countries, proving that when safety and freedom work together, families can achieve incredible things. We&apos;re not just a safety app – we&apos;re a movement toward fearless living.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Leadership Principles */}
+                        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div className="text-center p-6">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                    <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h4 className="font-semibold text-gray-800 mb-2">Trust First</h4>
+                                <p className="text-sm text-gray-600">Privacy and security are never compromised</p>
+                            </div>
+
+                            <div className="text-center p-6">
+                                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                    <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h4 className="font-semibold text-gray-800 mb-2">Innovation</h4>
+                                <p className="text-sm text-gray-600">Constantly evolving to meet modern needs</p>
+                            </div>
+
+                            <div className="text-center p-6">
+                                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                    <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                                    </svg>
+                                </div>
+                                <h4 className="font-semibold text-gray-800 mb-2">Community</h4>
+                                <p className="text-sm text-gray-600">Building stronger connections worldwide</p>
+                            </div>
+
+                            <div className="text-center p-6">
+                                <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                    <svg className="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h4 className="font-semibold text-gray-800 mb-2">Freedom</h4>
+                                <p className="text-sm text-gray-600">Enabling fearless exploration of life</p>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Safety and Independence Section */}
                     <div className="mt-32 space-y-32">
                         {/* Section Header */}

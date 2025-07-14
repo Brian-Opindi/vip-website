@@ -54,6 +54,12 @@ const Footer = () => {
                                         Learn
                                     </Link>
                                 </li>
+
+                                 <li>
+                                    <Link href="/learn" className="text-gray-300 hover:text-white transition-colors font-jost">
+                                        Why us
+                                    </Link>
+                                </li>
                             </ul>
 
                             <div className="hidden lg:block absolute -right-0 top-0 bottom-0 w-px bg-vanilla/20"></div>
