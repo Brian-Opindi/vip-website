@@ -101,6 +101,8 @@ const File = () => {
            <div className="absolute left-0 right-0 z-10 rounded-md bg-black mx-auto max-w-6xl flex justify-center">
                           <NavMenu />
                       </div>
+
+                      
         <div className="min-h-screen" style={{ backgroundColor: '#F5F1E8' }}>
            
 
