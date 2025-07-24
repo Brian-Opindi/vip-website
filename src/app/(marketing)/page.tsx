@@ -6,16 +6,20 @@ import Launch from "@/app/(marketing)/launch";
 import Testimonials from "@/app/(marketing)/testimonials";
 import Features from "@/app/(marketing)/features";
 import Why from "@/app/(marketing)/why";
+import MoreFeatures from "@/app/(marketing)/more-features";
+import HowItWorks from "@/app/(marketing)/how-it-works";
+import Overview from "@/app/(marketing)/overview";
+import Cta from "@/app/(marketing)/cta";
 
 export default function Home() {
   return (
       <>
         <Hero />
         <About />
-        <Features />
-        <Why />
+          <Overview />
+          <Cta />
+          <MoreFeatures />
         <Testimonials />
-        <Launch />
         <Pricing />
         <Footer />
       </>

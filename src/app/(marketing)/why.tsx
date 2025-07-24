@@ -12,7 +12,7 @@ const cardData = [
         subtitle: "Why VIP",
         title: "VIP for Families",
         description:
-            "Keep your loved ones safe and connected. With real-time tracking, panic alerts, and secure check-ins, families can stay informed about each member’s safety. Parents receive instant updates and can monitor movements, giving peace of mind at all times.",
+            "Keep your loved ones safe and connected. With real-time tracking, panic alerts, and secure check-ins, families can stay informed about each member's safety. Parents receive instant updates and can monitor movements, giving peace of mind at all times.",
         image: "/images/why.png",
         alt: "VIP for families",
     },
@@ -45,7 +45,6 @@ const cardData = [
     }
 ];
 
-
 const Why = () => {
     const containerRef = useRef<HTMLDivElement>(null)
     const cardsRef = useRef<(HTMLDivElement | null)[]>([])
@@ -73,64 +72,55 @@ const Why = () => {
         // Clear any existing ScrollTriggers
         ScrollTrigger.getAll().forEach(trigger => trigger.kill())
 
-        // Set initial positions with a small delay to ensure DOM is ready
+        // Set initial positions
         const initAnimation = () => {
             cards.forEach((card, index) => {
                 gsap.set(card, {
-                    zIndex: cardData.length - index,
-                    y: index === 0 ? 0 : 60,
-                    scale: index === 0 ? 1 : 0.9,
-                    opacity: index === 0 ? 1 : index === 1 ? 1 : 0,
+                    x: index === 0 ? "0%" : "120%", // First card at center, others off-screen right
+                    opacity: index === 0 ? 1 : 0,
+                    scale: 1,
                     transformOrigin: "center center"
                 })
             })
 
-            // Create scroll triggers for each transition
+            // Create horizontal sliding animation
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: container,
+                    start: "top top",
+                    end: `+=${cardData.length * 100}%`,
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                }
+            })
+
+            // Animate each card transition
             cards.forEach((card, index) => {
                 if (index < cards.length - 1) {
-                    ScrollTrigger.create({
-                        trigger: container,
-                        start: `10%+=${index * window.innerHeight} center`,
-                        end: `top+=${(index + 1) * window.innerHeight} center`,
-                        scrub: 1,
-                        invalidateOnRefresh: true,
-                        onUpdate: (self) => {
-                            const progress = self.progress
+                    // Current card slides out to the left
+                    tl.to(card, {
+                        x: "-120%",
+                        opacity: 0,
+                        duration: 1,
+                        ease: "power2.inOut"
+                    }, index)
 
-                            // Current active card moves up
-                            gsap.to(card, {
-                                y: -progress * 200,
-                                scale: 1,
-                                opacity: 1 - progress * 1,
-                                duration: 0.1,
-                                ease: "none"
-                            })
-
-                            // Next card becomes active
-                            const nextCard = cards[index + 1]
-                            if (nextCard) {
-                                gsap.to(nextCard, {
-                                    y: 60 - progress * 60,
-                                    scale: 0.9 + progress * 0.1,
-                                    opacity: 0 + progress * 1,
-                                    duration: 0.1,
-                                    ease: "none"
-                                })
-                            }
-
-                            // Show next upcoming card
-                            const cardAfterNext = cards[index + 2]
-                            if (cardAfterNext) {
-                                gsap.to(cardAfterNext, {
-                                    opacity: progress * 1,
-                                    y: 60,
-                                    scale: 0.9,
-                                    duration: 0.1,
-                                    ease: "none"
-                                })
-                            }
-                        }
-                    })
+                    // Next card slides in from the right
+                    tl.fromTo(cards[index + 1],
+                        {
+                            x: "120%",
+                            opacity: 0
+                        },
+                        {
+                            x: "0%",
+                            opacity: 1,
+                            duration: 1,
+                            ease: "power2.inOut"
+                        },
+                        index
+                    )
                 }
             })
 
@@ -157,11 +147,8 @@ const Why = () => {
 
     return (
         <section className="relative bg-background" ref={containerRef}>
-            <div
-                className="relative w-full"
-                style={{ height: `${cardData.length * 100}vh` }}
-            >
-                <div className="sticky top-0 h-screen flex items-center justify-center px-4">
+            <div className="relative w-full h-screen">
+                <div className="sticky top-0 h-screen flex items-center justify-center px-4 overflow-hidden">
                     <div className="relative w-full max-w-6xl h-[600px]">
                         {cardData.map((cardInfo, index) => (
                             <div

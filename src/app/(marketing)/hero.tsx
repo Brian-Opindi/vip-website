@@ -5,6 +5,8 @@ import Image from "next/image";
 import {NavMenu} from "@/app/(marketing)/navigation-menu";
 import {Button} from "@/components/ui/button";
 import {ArrowUpRight} from "lucide-react";
+import {FloatingNavDemo} from "@/app/(marketing)/floating-nav";
+import WaitlistModal from "@/components/vip/waitlist-modal";
 
 const Hero = () => {
     return (
@@ -13,6 +15,7 @@ const Hero = () => {
             <div className="absolute top-0 left-0 right-0 z-10 mx-auto max-w-6xl flex justify-center">
                 <NavMenu />
             </div>
+            <FloatingNavDemo />
 
             {/* Hero Content */}
             <div className="container mx-auto px-4 h-full">
@@ -32,17 +35,19 @@ const Hero = () => {
                                 </p>
                             </div>
                             <div className="flex flex-row gap-2 sm:gap-4 mb-10">
-                                <Button variant="vip" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
-                                  <span
-                                      className="
-                                      shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2"
-                                      aria-hidden="true"
-                                  >
-                                    <ArrowUpRight className="text-white" size={16} />
-                                  </span>
-                                                            Get Early Access!
-                                                        </Button>
-                                                        <Button variant="vipoutline" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
+                                <WaitlistModal>
+                                    <Button variant="vip" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
+                                        <span
+                                            className="
+                                            shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2"
+                                            aria-hidden="true"
+                                        >
+                                            <ArrowUpRight className="text-white" size={16} />
+                                        </span>
+                                        Join the waitlist!
+                                    </Button>
+                                </WaitlistModal>
+                                {/*<Button variant="vipoutline" className="p-4 sm:p-6 font-wix-madefor-display text-sm sm:text-base">
                                   <span
                                       className="
                                       shadow-lg bg-coffee flex items-center justify-center rounded-full dark:bg-white/20 w-6 h-6 sm:w-8 sm:h-8 -ml-2 sm:-ml-4 mr-1 sm:mr-2"
@@ -51,8 +56,9 @@ const Hero = () => {
                                     <ArrowUpRight className="text-white" size={16} />
                                   </span>
                                     Join our community!
-                                </Button>
-                            </div>                        </div>
+                                </Button>*/}
+                            </div>
+                        </div>
 
                         {/* Right Column */}
                         <div className="flex items-center justify-center">
