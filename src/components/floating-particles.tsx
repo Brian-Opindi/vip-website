@@ -9,13 +9,12 @@ interface Particle {
   vy: number;
   size: number;
   opacity: number;
-  pulseOffset: number;
 }
 
-const FloatingParticles = () => {
+const FloatingParticles: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0); // Fix: Provide initial value
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -29,85 +28,75 @@ const FloatingParticles = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
+
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle configuration - REDUCED COUNT
-    const PARTICLE_COUNT = 50; // Reduced from 200 to 50
+    // Initialize particles
+    const initParticles = () => {
+      const particles: Particle[] = [];
+      const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
 
-    // Create particles
-    const createParticles = () => {
-      particlesRef.current = [];
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
-        particlesRef.current.push({
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5, // Reduced velocity
+          vx: (Math.random() - 0.5) * 0.5,
           vy: (Math.random() - 0.5) * 0.5,
           size: Math.random() * 2 + 1,
-          opacity: Math.random() * 0.6 + 0.2,
-          pulseOffset: Math.random() * Math.PI * 2,
+          opacity: Math.random() * 0.5 + 0.2,
         });
       }
+
+      particlesRef.current = particles;
     };
 
-    // Animation loop - OPTIMIZED
-    let lastTime = 0;
-    const animate = (currentTime: number) => {
-      // Throttle to ~30fps instead of 60fps for better performance
-      if (currentTime - lastTime < 33) {
-        animationRef.current = requestAnimationFrame(animate);
-        return;
-      }
-      lastTime = currentTime;
+    initParticles();
 
-      // Clear canvas
+    // Animation loop
+    const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw particles
       particlesRef.current.forEach(particle => {
-        // Add random drift movement - REDUCED
-        particle.vx += (Math.random() - 0.5) * 0.02;
-        particle.vy += (Math.random() - 0.5) * 0.02;
-
         // Update position
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Apply friction
-        particle.vx *= 0.99;
-        particle.vy *= 0.99;
-
-        // Boundary wrapping
-        if (particle.x < -10) particle.x = canvas.width + 10;
-        if (particle.x > canvas.width + 10) particle.x = -10;
-        if (particle.y < -10) particle.y = canvas.height + 10;
-        if (particle.y > canvas.height + 10) particle.y = -10;
-
-        // Calculate pulse effect - OPTIMIZED
-        const pulseScale =
-          1 + Math.sin(currentTime * 0.001 + particle.pulseOffset) * 0.1;
-        const currentSize = particle.size * pulseScale;
+        // Wrap around edges
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
 
         // Draw particle
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, currentSize, 0, Math.PI * 2);
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
         ctx.fill();
+      });
 
-        // Add glow effect
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, currentSize * 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity * 0.2})`;
-        ctx.fill();
+      // Draw connections
+      particlesRef.current.forEach((particle, i) => {
+        particlesRef.current.slice(i + 1).forEach(otherParticle => {
+          const dx = particle.x - otherParticle.x;
+          const dy = particle.y - otherParticle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 100)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        });
       });
 
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    // Initialize
-    createParticles();
-    animate(0);
+    animate();
 
     // Cleanup
     return () => {
@@ -121,8 +110,8 @@ const FloatingParticles = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
-      style={{ zIndex: 1 }}
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{ background: 'transparent' }}
     />
   );
 };
