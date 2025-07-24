@@ -1,22 +1,29 @@
-"use client";
-import React, { SVGProps, useState } from "react";
-import { motion, useMotionValueEvent, useScroll } from "motion/react";
-import { cn } from "@/lib/utils";
+'use client';
+import React, { SVGProps, useState } from 'react';
+import { motion, useMotionValueEvent, useScroll } from 'motion/react';
+import { cn } from '@/lib/utils';
 
 export const StickyBanner = ({
   className,
   children,
   hideOnScroll = false,
+  debug = false,
 }: {
   className?: string;
   children: React.ReactNode;
   hideOnScroll?: boolean;
+  debug?: boolean;
 }) => {
   const [open, setOpen] = useState(true);
   const { scrollY } = useScroll();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log(latest);
+  useMotionValueEvent(scrollY, 'change', latest => {
+    // Optional debug logging for development
+    if (debug && process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console
+      console.log('Scroll position:', latest);
+    }
+
     if (hideOnScroll && latest > 40) {
       setOpen(false);
     } else {
@@ -27,8 +34,8 @@ export const StickyBanner = ({
   return (
     <motion.div
       className={cn(
-        "sticky inset-x-0 top-0 z-40 flex min-h-14 w-full items-center justify-center bg-transparent px-4 py-1",
-        className,
+        'sticky inset-x-0 top-0 z-40 flex min-h-14 w-full items-center justify-center bg-transparent px-4 py-1',
+        className
       )}
       initial={{
         y: -100,
@@ -40,7 +47,7 @@ export const StickyBanner = ({
       }}
       transition={{
         duration: 0.3,
-        ease: "easeInOut",
+        ease: 'easeInOut',
       }}
     >
       {children}
@@ -54,6 +61,7 @@ export const StickyBanner = ({
         }}
         className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer"
         onClick={() => setOpen(!open)}
+        aria-label="Close banner"
       >
         <CloseIcon className="h-5 w-5 text-white" />
       </motion.button>

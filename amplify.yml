@@ -10,7 +10,7 @@ frontend:
       commands:
         - pnpm run build
   artifacts:
-    baseDirectory: .next  # or 'dist' or 'out' depending on framework
+    baseDirectory: .next # or 'dist' or 'out' depending on framework
     files:
       - '**/*'
   cache:
