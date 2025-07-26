@@ -2,6 +2,33 @@
 
 import { useEffect } from 'react';
 
+// Define specific types for Zoho SalesIQ
+interface ZohoSalesIQ {
+  ready: () => void;
+  widget?: {
+    [key: string]: unknown;
+  };
+  chat?: {
+    [key: string]: unknown;
+  };
+  visitor?: {
+    [key: string]: unknown;
+  };
+  [key: string]: unknown;
+}
+
+interface ZohoGlobal {
+  salesiq?: ZohoSalesIQ;
+  [key: string]: unknown;
+}
+
+// Extend the Window interface to include Zoho SalesIQ properties
+declare global {
+  interface Window {
+    $zoho?: ZohoGlobal;
+  }
+}
+
 const SalesIQ = () => {
   useEffect(() => {
     // Initialize Zoho SalesIQ
