@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { FloatingDockDemo } from '@/app/(marketing)/floating-dock';
+import SalesIQ from '@/app/(marketing)/zoho/sale-iq';
 
 const Footer = () => {
   return (
@@ -195,6 +196,7 @@ const Footer = () => {
           </div>
         </div>
         <FloatingDockDemo />
+        <SalesIQ />
       </div>
     </section>
   );

@@ -4,7 +4,6 @@ import Pricing from '@/app/(marketing)/pricing';
 import Footer from '@/app/(marketing)/footer';
 import Testimonials from '@/app/(marketing)/testimonials';
 import MoreFeatures from '@/app/(marketing)/more-features';
-import Overview from '@/app/(marketing)/overview';
 import Cta from '@/app/(marketing)/cta';
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
     <>
       <Hero />
       <About />
-      <Overview />
       <Cta />
       <MoreFeatures />
       <Testimonials />

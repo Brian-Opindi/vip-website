@@ -202,7 +202,7 @@ const Pricing = () => {
                               : 'bg-coffee text-white hover:text-coffee hover:bg-white cursor-pointer hover:shadow-lg hover:border-1 hover:border-coffee transition-colors duration-500'
                           }`}
                         >
-                          Buy Now
+                          Get Early Access
                         </button>
                       </div>
                     ))}
